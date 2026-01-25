@@ -1,0 +1,11 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // If using the npm plugin (after publishing):
+  // "plugin": ["opencode-plugin-cursor"],
+
+  // Safer defaults: require approval before invoking Cursor tools.
+  "permission": {
+    "cursor_cli_*": "ask",
+    "cursor_cloud_*": "ask"
+  }
+}

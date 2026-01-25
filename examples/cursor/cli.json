@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "editor": { "vimMode": false },
+  "permissions": {
+    "allow": ["Read(**/*)", "Shell(ls)", "Shell(git)"],
+    "deny": [
+      "Read(.env*)",
+      "Write(**/*)",
+      "Shell(rm)",
+      "Shell(curl)",
+      "Shell(wget)"
+    ]
+  }
+}
