@@ -1,5 +1,7 @@
 # cursor-opencode-auth
 
+<img width="858" height="608" alt="image" src="https://github.com/user-attachments/assets/75a004ce-661f-4999-93d0-b45b9f9db6d0" />
+
 Community integration between Cursor and OpenCode.
 
 This repo is intentionally built around *documented* Cursor surfaces:
