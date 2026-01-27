@@ -121,10 +121,10 @@ node /path/to/cursor-opencode-auth/packages/cursor-openai-bridge/dist/cli.js
 Bridge knobs (optional env vars):
 
 - `CURSOR_BRIDGE_WORKSPACE`: workspace dir for Cursor CLI (defaults to the bridge process `cwd`)
-- `CURSOR_BRIDGE_MODE`: `ask` | `plan` | `agent` (default: `agent`)
+- `CURSOR_BRIDGE_MODE`: `ask` | `plan` | `agent` (default: `ask`)
 - `CURSOR_BRIDGE_STRICT_MODEL`: `true` | `false` (default: `true`)
-- `CURSOR_BRIDGE_FORCE`: `true` | `false` (default: `true`)
-- `CURSOR_BRIDGE_APPROVE_MCPS`: `true` | `false` (default: `true`)
+- `CURSOR_BRIDGE_FORCE`: `true` | `false` (default: `false`)
+- `CURSOR_BRIDGE_APPROVE_MCPS`: `true` | `false` (default: `false`)
 
 ## Status
 
@@ -145,7 +145,10 @@ The OpenCode plugin adds tools:
 ## Repo layout
 
 - `packages/opencode-plugin-cursor/` - OpenCode plugin package
+- `packages/opencode-plugin-cursor/src/tools/` - tool definitions (`cursor_cli_*`, `cursor_cloud_*`, `cursor_bridge_*`)
+- `packages/opencode-plugin-cursor/src/lib/` - shared helpers (bridge process mgmt, Cursor API client, etc.)
 - `packages/cursor-openai-bridge/` - local OpenAI-compatible server backed by Cursor CLI
+- `packages/cursor-openai-bridge/src/lib/` - bridge internals (config, HTTP helpers, Cursor CLI wrapper)
 - `docs/PLAN.md` - architecture + build plan
 - `examples/` - sample Cursor + OpenCode config
 

@@ -46,16 +46,17 @@ The bridge listens on `http://127.0.0.1:8765` by default.
 
 By default the bridge:
 
-- Runs Cursor CLI in **agent mode** (edits enabled; `--mode` is omitted)
-- Pins requests to the **last explicitly selected model** to avoid accidental `auto`/fallback calls (`CURSOR_BRIDGE_STRICT_MODEL=true`)
+- Runs Cursor CLI in **ask mode** (passes `--mode ask`) so it behaves like a normal model provider and avoids Cursor's internal agent loop (fewer underlying model requests).
+- Does **not** pass `--force` or `--approve-mcps` unless explicitly enabled.
+- Pins requests to the **last explicitly selected model** to avoid accidental `auto`/fallback calls (`CURSOR_BRIDGE_STRICT_MODEL=true`).
 
 Environment variables (optional):
 
 - `CURSOR_BRIDGE_WORKSPACE`: workspace dir for Cursor CLI (defaults to the bridge process `cwd`)
-- `CURSOR_BRIDGE_MODE`: `ask` | `plan` | `agent` (default: `agent`)
+- `CURSOR_BRIDGE_MODE`: `ask` | `plan` | `agent` (default: `ask`)
 - `CURSOR_BRIDGE_STRICT_MODEL`: `true` | `false` (default: `true`)
-- `CURSOR_BRIDGE_FORCE`: `true` | `false` (default: `true`)
-- `CURSOR_BRIDGE_APPROVE_MCPS`: `true` | `false` (default: `true`)
+- `CURSOR_BRIDGE_FORCE`: `true` | `false` (default: `false`)
+- `CURSOR_BRIDGE_APPROVE_MCPS`: `true` | `false` (default: `false`)
 
 Option A: start it from OpenCode (recommended)
 
